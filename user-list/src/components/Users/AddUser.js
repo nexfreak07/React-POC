@@ -4,7 +4,7 @@ import classes from './AddUser.module.css';
 import Button from "../UI/Button";
 import { useState } from "react";
 
-const Adduser = () => {
+const Adduser = (props) => {
 
     const [name, setName] = useState("");
     const [age, setAge] = useState(""); 
@@ -32,7 +32,8 @@ const Adduser = () => {
             Name : name,
             Age : +age
         }
-
+        props.onAdd(newUser);
+        
         setName("");
         setAge("");
 
